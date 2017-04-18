@@ -18,7 +18,7 @@ You can check with `which pg_config`.
 
 Then in the database of your choice say:
 
-    CREATE EXTENSION inetrange;
+    CREATE EXTENSION pjpg;
 
 
 Usage
