@@ -30,6 +30,17 @@ $$
 LANGUAGE sql STRICT IMMUTABLE
 ;
 
+-- Like the 3-arg in_tz,
+-- but always converts from UTC.
+CREATE OR REPLACE FUNCTION in_tz(t timestamp without time zone, to_tz text)
+RETURNS timestamp without time zone
+AS
+$$
+  SELECT t AT TIME ZONE 'UTC' AT TIME ZONE to_tz;
+$$
+LANGUAGE sql STRICT IMMUTABLE
+;
+
 -- Given a timestamp t (assumed to be in UTC),
 -- returns the first instant in t's day
 -- in the timezone tz,

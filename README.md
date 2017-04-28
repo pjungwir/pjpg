@@ -46,6 +46,10 @@ but tells you the same instant in a different place.
 It is useful as an input to `date_trunc`,
 so that you can slice the timeline into days using the right timezone.
 
+### timestamp without time zone in\_tz(t timestamp without time zone, to\_tz text)
+
+Like the 3-arg version, but assumes `t` is in UTC.
+
 ### timestamp without time zone beginning\_of\_day(t timestamp without time zone, tz text)
 
 Given a time `t` and its timezone `tz`, finds the first moment of the day.
